@@ -8,8 +8,8 @@
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <style>
-    html, body { margin: 0; min-height: 100%; background: #11140f; }
-    #root { min-height: 100vh; }
+    html, body { margin: 0; min-height: 100%; height: 100%; background: #11140f; overflow: hidden; }
+    #root { min-height: 100vh; height: 100%; }
     noscript { color: white; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; padding: 24px; display: block; }
   </style>
 </head>
@@ -699,7 +699,7 @@ const CSS = `
   --paper:#f4f3ef; --card:#ffffff; --ink:#1b1f24; --ink-2:#454b54; --ink-soft:#828995; --line:#e9e6df; --line-2:#f0ede6;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   color-scheme:light; -webkit-font-smoothing:antialiased;
-  background:#11140f; min-height:100vh; width:100%; display:flex; align-items:center; justify-content:center;
+  background:#11140f; min-height:100vh; min-height:100dvh; height:100vh; height:100dvh; width:100%; display:flex; align-items:center; justify-content:center;
 }
 .kg-wrap *{ box-sizing:border-box; }
 .kg-wrap button{ font-family:inherit; }
@@ -708,12 +708,12 @@ const CSS = `
 .kg-wrap .ic-chev{ width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; display:block; }
 .kg-wrap .ic-nav{ width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; display:block; }
 
-.phone{ position:relative; width:100%; max-width:428px; height:100vh; max-height:932px; background:var(--paper);
+.phone{ position:relative; width:100%; max-width:428px; height:100vh; height:100dvh; max-height:932px; background:var(--paper);
   display:flex; flex-direction:column; overflow:hidden; box-shadow:0 30px 80px rgba(0,0,0,.5); }
-@media (min-width:480px){ .phone{ height:calc(100vh - 40px); border-radius:44px; border:11px solid #0a0d08; } }
+@media (min-width:480px){ .phone{ height:calc(100vh - 40px); height:calc(100dvh - 40px); border-radius:44px; border:11px solid #0a0d08; } }
 
 /* header (light) */
-.hdr{ flex:none; background:var(--paper); padding:20px 18px 14px; border-bottom:1px solid var(--line); }
+.hdr{ flex:none; background:var(--paper); padding:calc(36px + env(safe-area-inset-top)) 18px 14px; border-bottom:1px solid var(--line); }
 .hdr-top{ margin-bottom:14px; }
 .eyebrow{ font-size:10.5px; font-weight:700; letter-spacing:1.3px; color:var(--emerald-d); }
 .hdr-title{ font-size:30px; font-weight:700; letter-spacing:-.6px; color:var(--ink); line-height:1.05; margin-top:5px; }
@@ -835,7 +835,7 @@ const CSS = `
 .export .ic-sm{ width:16px; height:16px; }
 
 /* bottom nav */
-.nav{ flex:none; display:flex; background:rgba(255,255,255,.95); backdrop-filter:blur(10px); border-top:1px solid var(--line); padding:7px 0 calc(8px + env(safe-area-inset-bottom)); }
+.nav{ flex:none; display:flex; background:rgba(255,255,255,.95); backdrop-filter:blur(10px); border-top:1px solid var(--line); padding:7px 0 calc(28px + env(safe-area-inset-bottom)); }
 .nav-i{ flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:none; color:var(--ink-soft); font-size:11px; cursor:pointer; padding:5px 0; }
 .nav-i.on{ color:var(--emerald-d); font-weight:600; }
 
