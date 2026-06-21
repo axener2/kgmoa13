@@ -378,7 +378,7 @@ function App() {
                         React.createElement("button", { className: "tool grow", onClick: () => setSheet("sort") },
                             I.sort,
                             React.createElement("span", { className: "tool-sort" }, sortShort)),
-                        React.createElement("div", { className: "count" }, filtered.length))))),
+                        React.createElement("div", { className: "count" }, filtered.length + " Members"))))),
             React.createElement("main", { className: "body" },
                 tab === "members" && (React.createElement(React.Fragment, null,
                     activeFilterCount > 0 && (React.createElement("div", { className: "chips" },
@@ -621,9 +621,7 @@ function Insights({ onPickBlock, onPickSpec, onPickAppt, onPickFacility, onPickS
                     o.label),
                 React.createElement("span", { className: "al-c dq" }, s.dqCounts[o.key])))),
             React.createElement("div", { className: "dq-note" }, "Counts come from blank or out-of-range fields in the source sheet. Tap a category to review and correct those entries.")),
-        React.createElement("button", { className: "export", onClick: onExport },
-            I.download,
-            React.createElement("span", null, "Export current list (CSV)"))));
+        ));
 }
 function Donut({ counts, total }) {
     const R = 52, C = 2 * Math.PI * R;
